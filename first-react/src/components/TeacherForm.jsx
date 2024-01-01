@@ -1,6 +1,8 @@
 import { useState } from "react";
+import PropTypes from 'prop-types'
 import '../styles/TeacherForm.css'
-export const TeacherForm = () => {
+
+export const TeacherForm = ({ onAddTeacher }) => {
   const [teacherModel, setTeacherModel] = useState({
     name: "",
     surName: "",
@@ -8,7 +10,6 @@ export const TeacherForm = () => {
   });
 
   const [subjectModel, setSubjectModel] = useState("");
-  const [teachers, setTeachers] = useState([]);
 
   const handleName = (e) => setTeacherModel({ ...teacherModel, name: e.target.value });
   const handleSurName = (e) => setTeacherModel({ ...teacherModel, surName: e.target.value });
@@ -24,7 +25,7 @@ export const TeacherForm = () => {
   };
 
   const addTeacher = () => {
-    setTeachers((prevTeachers) => [...prevTeachers, teacherModel]);
+    onAddTeacher(teacherModel)
 
     setTeacherModel({
       name: "",
@@ -49,32 +50,10 @@ export const TeacherForm = () => {
           <button onClick={addTeacher}>Create Teacher</button>
         </form>
       </div>
-      <div className="list">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>SurName</th>
-              <th>Subjects</th>
-            </tr>
-          </thead>
-          <tbody>
-            {teachers.map((teacher, index) => (
-              <tr key={index}>
-                <td>{teacher.name}</td>
-                <td>{teacher.surName}</td>
-                <td>
-                  <ul>
-                    {teacher.subjects.map((subject, i) => (
-                      <li key={i}>{subject}</li>
-                    ))}
-                  </ul>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
     </div>
   );
 };
+
+TeacherForm.propTypes = {
+    onAddTeacher: PropTypes.func.isRequired
+}

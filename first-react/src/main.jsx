@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { TeacherForm } from "./components/TeacherForm";
+import Principal from "./components/Principal";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -14,6 +14,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     /> */}
     {/* <TaskCard isSolved={false} /> */}
     {/* <Post/> */}
-    <TeacherForm/>
+    <Principal/>
   </React.StrictMode>
 );
