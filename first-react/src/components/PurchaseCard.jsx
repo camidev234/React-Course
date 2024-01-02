@@ -13,6 +13,7 @@ export const PurchaseCard = ({ product }) => {
   return (
     <div className="bg-gray-800 text-white p-5 rounded shadow-md">
       <span className="text-lg font-semibold">{product.product}</span>
+      <span className="block text-sm mt-2">Amount: {product.quantity}</span>
       <span className="block text-sm mt-2">${product.value}</span>
       <button
         onClick={deleteProduct}

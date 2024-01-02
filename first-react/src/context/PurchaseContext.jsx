@@ -9,11 +9,13 @@ export const PurchaseContextProvider = (props) => {
 
     const addProduct = (newProduct) => {
 
-        const productValue = parseFloat(newProduct.value);
+        const productQuantity = parseInt(newProduct.productQuantity);
+        const productValue = parseInt(newProduct.value) * productQuantity;
 
         setProducts([...products, {
             id: products.length+1,
             product: newProduct.product,
+            quantity: productQuantity,
             value: productValue
         }])
     }

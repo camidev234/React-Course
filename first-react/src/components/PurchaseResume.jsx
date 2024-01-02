@@ -34,7 +34,8 @@ export const PurchaseResume = () => {
       }}>
         <span className="text-lg font-semibold">Subtotal: ${subtotal}</span>
         <br />
-        <span className="text-lg font-semibold">Total: ${total.toFixed(2)}</span>
+        <span className="text-lg font-semibold">Total: ${total.toFixed(2)}</span><br />
+        <span>The total includes taxes</span>
       </div>
     </>
   );
