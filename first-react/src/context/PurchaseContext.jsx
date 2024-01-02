@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+import PropTypes from 'prop-types';
 
 export const PurchaseContext = createContext();
 
@@ -30,4 +31,9 @@ export const PurchaseContextProvider = (props) => {
             {props.children}
         </PurchaseContext.Provider>
     )
+}
+
+
+PurchaseContextProvider.propTypes = {
+    children: PropTypes.node
 }
