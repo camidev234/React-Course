@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { TeacherForm }  from './TeacherForm';
-import { Teachers } from './Teachers';
+import { TeacherForm }  from './components/TeacherForm';
+import { Teachers } from './components/Teachers';
 
 const Principal = () => {
   const [teachers, setTeachers] = useState([]);

@@ -1,19 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Principal from "./components/Principal";
+import { PurchaseContainer } from "./components/PurchaseContainer";
+import { PurchaseContextProvider } from "./context/PurchaseContext";
+import './index.css'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <Post
-      title='This is the title'
-      description={description}
-      address={{
-        street: 'cra 7b',
-        city: 'Soacha'
-      }}
-    /> */}
-    {/* <TaskCard isSolved={false} /> */}
-    {/* <Post/> */}
-    <Principal/>
+    <PurchaseContextProvider>
+      <PurchaseContainer />
+    </PurchaseContextProvider>
   </React.StrictMode>
 );
