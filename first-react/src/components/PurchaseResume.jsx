@@ -13,11 +13,8 @@ export const PurchaseResume = () => {
   useEffect(() => {
     const temporalSubtotal = products.reduce((acc, product) => acc + product.value, 0);
     setSubtotal(temporalSubtotal);
+    setTotal(temporalSubtotal + temporalSubtotal * 0.19);
   }, [products]);
-
-  useEffect(() => {
-    setTotal(subtotal + subtotal * 0.19);
-  }, [subtotal]);
 
   if(products.length === 0) {
     return <h1 className="text-white text-4xl font-bold text-center">No products to show</h1>
