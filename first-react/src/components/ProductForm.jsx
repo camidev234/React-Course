@@ -37,8 +37,11 @@ export const ProductForm = () => {
     }
   };
 
+
   return (
-    <section className="formContainer max-w-md mx-auto p-4 bg-gray-800 rounded-md shadow-md mt-9 mb-11">
+    <>
+    <h2 className="text-white text-4xl font-bold text-center mb-7">Add your products</h2>
+    <section className="formContainer max-w-md mx-auto p-4 bg-gray-800 rounded-md shadow-md mb-11">
       <form action="" onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="" className="text-lg font-semibold text-white">
           Product:
@@ -77,5 +80,6 @@ export const ProductForm = () => {
         </button>
       </form>
     </section>
+    </>
   );
 };

@@ -19,6 +19,10 @@ export const PurchaseResume = () => {
     setTotal(subtotal + subtotal * 0.19);
   }, [subtotal]);
 
+  if(products.length === 0) {
+    return <h1 className="text-white text-4xl font-bold text-center">No products to show</h1>
+  }
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8 p-5">
@@ -28,7 +32,7 @@ export const PurchaseResume = () => {
           </div>
         ))}
       </div>
-      <div className="totals bg-gray-800 text-white p-7 rounded shadow-md mx-auto" style={{
+      <div className="totals bg-gray-800 text-white p-7 rounded shadow-md mx-auto mr-10" style={{
         marginLeft: '40px'
       }}>
         <span className="text-lg font-semibold">Subtotal: ${subtotal}</span>

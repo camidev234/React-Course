@@ -4,7 +4,7 @@ import { PurchaseResume } from "./PurchaseResume";
 export const PurchaseContainer = () => {
 
     return (
-        <section className="container">
+        <section className="bg-zinc-900 pt-9 pb-11 min-h-lvh">
             <ProductForm />
             <PurchaseResume />
         </section>
